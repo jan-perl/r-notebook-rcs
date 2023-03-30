@@ -12,8 +12,8 @@ COPY addl_config.py /
 RUN cat /addl_config.py >> ~/.jupyter/jupyter_notebook_config.py
 RUN cat ~/.jupyter/jupyter_notebook_config.py
 
-RUN conda install -v -y -c conda-forge r-openxlsx 
-RUN conda install -v -y -c conda-forge r-ggplot
-
 USER $NB_USER
+
+RUN conda install -v -y -c conda-forge r-openxlsx r-ggplot2
+
 
