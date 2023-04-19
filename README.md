@@ -15,10 +15,10 @@ usage:
  docker exec -it jupyter04r bash
 > to enter the container
 
-   git config --global user.email jan-perl@hoogenraad.net
+   git config --global user.email "<user@mail>"
 > to set git user mail
 
-    git config --global user.name "Jan Hoogenraad"
+    git config --global user.name "<user name>"
 > to set git user name
 
   exit
