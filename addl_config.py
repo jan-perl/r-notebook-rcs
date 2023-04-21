@@ -12,9 +12,10 @@ def post_save(model, os_path, contents_manager):
     if fname.endswith('.ipynb'):
         return # dont do this for notebooks source
 # old RCS style check_call(["ci","-d","-l","-t-title","-m-msg", fname], cwd=d)
-    check_call(["git","add", fname], cwd=d)
-    check_call(["git","commit","-m-msg", fname], cwd=d)
-    check_call(["git","push"], cwd=d)
+    check_call(["/home/jovyan/.jupyter/commit-ch.sh", fname], cwd=d)
+#    check_call(["git","add", fname], cwd=d)
+#    check_call(["git","commit","-m-msg", fname], cwd=d)
+#    check_call(["git","push"], cwd=d)
 
 c.FileContentsManager.post_save_hook = post_save
 
