@@ -24,6 +24,7 @@ RUN conda install --yes jupytext=1.5.0
 
 RUN conda install --yes \
 	    'r-openxlsx' \
+	    'r-aws.s3' \
 	    'r-ggplot2'
 
 USER $NB_USER
