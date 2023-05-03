@@ -12,17 +12,6 @@ usage:
 > run image, and mount ~/jupr-work inside workbook, so that storage is permanent
 > uses port 8889
 
- docker exec -it jupyter04r bash
-> to enter the container
-
-   git config --global user.email "<user@mail>"
-> to set git user mail
-
-    git config --global user.name "<user name>"
-> to set git user name
-
-  exit
-> to exit the container
 
   docker logs jupyter04r 2>&1 | grep tok
 > find the token to be used
