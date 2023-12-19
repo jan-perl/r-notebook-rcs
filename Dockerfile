@@ -21,11 +21,36 @@ RUN ulimit -a
 RUN conda install --yes jupytext=1.5.0
 #this jupytext version does not require toml
 
+RUN conda update -n base conda
 
+RUN echo not installing 
 RUN conda install --yes \
 	    'r-openxlsx' \
 	    'r-aws.s3' \
-	    'r-ggplot2'
+	    'r-ggplot2' 
+
+
+RUN echo not installing \
+  'R-tidyr<=1.i.0' \
+  R-topicmodels \
+  R-tm \
+  R-SnowballC \ 
+  R-textclean \
+  'R-knitr' \
+    'R-DT' \
+    R-reshape2 \
+    R-wordcloud \
+    R-pals \
+    R-lda \
+    'R-remotes' \
+    R-corrplot \
+    R-propagate \
+    R-Rtsne \
+    R-fastcluster \
+    R-umap 
+
+# R-rprojroot 'R-Rcpp>=1.0.7' R-RcppTOML R-here R-rappdirs R-reticulate R-RSpectra
+#umap dependencies above
 
 USER $NB_USER
 
@@ -38,7 +63,7 @@ RUN cp /commit-ch.sh ~/.jupyter
 RUN chmod +x ~/.jupyter/commit-ch.sh 
 RUN cp /jupytext.toml ~
 RUN cat /addl_config.py >> ~/.jupyter/jupyter_notebook_config.py
-RUN cat ~/.jupyter/jupyter_notebook_config.py
+#RUN cat ~/.jupyter/jupyter_notebook_config.py
 
 #trial code for older versions
 #RUN jupyter labextension install jupyterlab-jupytext@1.2.2 
