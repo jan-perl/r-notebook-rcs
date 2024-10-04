@@ -23,8 +23,7 @@ RUN conda install --yes jupytext=1.5.0
 
 RUN conda update -n base conda
 
-RUN echo not installing 
-RUN conda install --yes \
+RUN echo not installing through conda install --yes \
 	    'r-openxlsx' \
 	    'r-aws.s3' \
 	    'r-ggplot2' 
@@ -63,6 +62,7 @@ RUN cp /commit-ch.sh ~/.jupyter
 RUN chmod +x ~/.jupyter/commit-ch.sh 
 RUN cp /jupytext.toml ~
 RUN cat /addl_config.py >> ~/.jupyter/jupyter_notebook_config.py
+RUN R instp.R
 #RUN cat ~/.jupyter/jupyter_notebook_config.py
 
 #trial code for older versions
