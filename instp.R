@@ -1,3 +1,4 @@
+options(repos = "http://cran.us.r-project.org")
 #    install.packages("remotes")
 #    remotes::install_version("rlang", "1.1.2")
 #after installing docker container was 0.4.6 / 1.0.0 -> after  install.packages("dplyr",dependencies=TRUE) -> 1.1.2/1.1.4

@@ -62,7 +62,9 @@ RUN cp /commit-ch.sh ~/.jupyter
 RUN chmod +x ~/.jupyter/commit-ch.sh 
 RUN cp /jupytext.toml ~
 RUN cat /addl_config.py >> ~/.jupyter/jupyter_notebook_config.py
-RUN R instp.R
+COPY instp.R /
+RUN cp /instp.R ~
+RUN Rscript instp.R
 #RUN cat ~/.jupyter/jupyter_notebook_config.py
 
 #trial code for older versions
